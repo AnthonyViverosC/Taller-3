@@ -17,7 +17,13 @@ public class sv_muestraRegistro extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       
-        try {
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+                try {
 
         int id = Integer.parseInt(request.getParameter("id"));
         String nombre = request.getParameter("nombre");
@@ -42,12 +48,6 @@ public class sv_muestraRegistro extends HttpServlet {
     } finally{
             out.close();
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     @Override
